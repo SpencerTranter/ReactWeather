@@ -40,8 +40,8 @@ class CityList extends Component {
         <CitySelect
         addCity={this.addCity}
         />
-        <div className='Cities'>
-          {this.renderCities()}
+        <div className='Cities container-fluid'>
+            {this.renderCities()}
         </div>
       </div>
     )
