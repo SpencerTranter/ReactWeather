@@ -1,12 +1,7 @@
 import React, { Component }     from 'react';
-import { Menu, Dropdown, Icon } from 'antd';
 import PlacesAutocomplete       from 'react-places-autocomplete';
-import _                        from 'lodash';
 
 import '../css/CitySelect.css';
-
-const SubMenu = Menu.SubMenu;
-
 
 export class CitySelect extends Component {
 
@@ -20,8 +15,11 @@ export class CitySelect extends Component {
 
   addCity(address) {
     const city = address.split(',')[0];
-    this.props.addCity(city);
-    this.setState({ address: '' });
+    if (city.length > 2) {
+      this.props.addCity(city);
+      this.setState({ address: '' });
+    }
+    else this.setState({ address: 'Please choose another city!' });
   }
 
   handleChange(address) {
@@ -41,12 +39,12 @@ export class CitySelect extends Component {
 
     const cssClasses = {
       root: 'form-group',
-      input: 'Demo__search-input',
-      autocompleteContainer: 'Demo__autocomplete-container',
+      input: 'search-input',
+      autocompleteContainer: 'autocomplete-container',
     }
 
     return (
-      <div className='container'>
+      <div className='CitySelect'>
         <PlacesAutocomplete
           onSelect={this.addCity}
           onEnterKeyDown={this.addCity}

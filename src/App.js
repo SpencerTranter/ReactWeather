@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 
 import CityList from './components/CityList';
-import CitySelect from './components/CitySelect';
 import './css/App.css';
 
 class App extends Component {

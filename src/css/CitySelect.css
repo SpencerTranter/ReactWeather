@@ -1,14 +1,6 @@
-.Demo__suggestion-icon {
-  margin-right: 8px;
-}
-
-.fa.fa-map-marker.header {
-  color: #e53935;
-}
-
-.Demo__search-input,
-.Demo__search-input:focus,
-.Demo__search-input:active {
+.search-input,
+.search-input:focus,
+.search-input:active {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
   border: honeydew;
   display: block;
@@ -19,7 +11,7 @@
   outline: none;
 }
 
-.Demo__autocomplete-container {
+.autocomplete-container {
   border-bottom: honeydew;
   border-left: honeydew;
   border-right: honeydew;
@@ -28,7 +20,7 @@
   border-radius: 0 0 2px 2px;
 }
 
-.Demo__suggestion-item {
+.suggestion-item {
   padding: 4px;
   text-align: left;
 }

@@ -41,20 +41,31 @@ class City extends Component {
     this.props.removeCity(this.props.name);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     getWeather(this.props.name)
     .then(obj => this.setState({ temp: obj.temp, weather: obj.weather, days: createDays() }))
-    .then(() => console.log(this.state.weather));
+    .catch(err => alert('Error'));
   }
 
   renderCards() {
-    const weatherIcons = { Clear: 'day-sunny', Rain: 'rain', Drizzle: 'showers', Clouds: 'cloudy', Snow: 'snow', Atmosphere: 'fog' , Thunderstorm: 'thunderstorm' };
+
+    const weatherIcons = {
+      Clear: 'day-sunny',
+      Rain: 'rain',
+      Drizzle: 'showers',
+      Clouds: 'cloudy',
+      Snow: 'snow',
+      Atmosphere: 'fog' ,
+      Thunderstorm: 'thunderstorm'
+    };
     return this.state.days.map((day, i) => {
+
       const icon = `wi wi-${weatherIcons[this.state.weather[i]]}`;
       return (
         <Card key={day} day={day} weather={icon} temp={this.state.temp[i]}/>
       )
-    })
+
+    });
 
   }
 
