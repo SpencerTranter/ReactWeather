@@ -1,33 +1,43 @@
+.Icon {
+  height: 100px;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
+  background-image: url('../images/city-night.jpg');
+  background-color: #96a3b7;
   height: 25vh;
   padding: 20px;
   color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2em;
   color: white;
+  padding-left: 10%;
 }
 
 .App-intro {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+} */
 
-.Icon {
-  height: 100px;
-}
+@media (max-height: 512px) {
+  .App-logo { display: none }
+  .App-header { margin: auto }
+ }
+
+ @media (max-width: 900px) {
+   .App-title { padding-left: 0; }
+  }
+
+  @media (max-width: 500px) {
+    .App-header { height: 15vh; }
+   }

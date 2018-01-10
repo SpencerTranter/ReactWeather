@@ -1,46 +1,61 @@
 import React, { Component } from 'react';
+import { Tabs } from 'antd';
 
 import City from './City';
-import CitySelect from './CitySelect';
+
+import '../css/CityList.css'
+
+const TabPane     = Tabs.TabPane;
 
 class CityList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { cities: ['Vancouver'] };
+    this.state = { cities: [...props.cities] };
 
-    this.addCity     = this.addCity.bind(this);
     this.removeCity  = this.removeCity.bind(this);
   }
 
-  addCity(newName) {
-    this.setState({ cities: [...this.state.cities, newName] });
+  componentWillReceiveProps(nextProps) {
+      this.setState({ cities: [...nextProps.cities] });
   }
+
 
   removeCity(removeName) {
-    const filteredCities = this.state.cities.filter(name => {
-      return name !== removeName;
-    });
-    this.setState({ cities: filteredCities });
+    this.props.removeCity(removeName);
   }
 
-  renderCities() {
+  renderTabs() {
     return this.state.cities.map((name, i) => (
-      <City
-      name={name}
-      removeCity={this.removeCity}
-      key={i}
-      />
-    ));
+      <TabPane tab={name} key={i}>
+        <City
+        name={name}
+        removeCity={this.removeCity}
+        key={i}
+        />
+      </TabPane>
+    ))
   }
 
   render() {
     return (
       <div className='CityList'>
-        <CitySelect
-        addCity={this.addCity}
-        />
-        {this.renderCities()}
+        <Tabs
+          className='TabLarge'
+          defaultActiveKey='0'
+          tabPosition='left'
+          style={{ height: '100%' }}
+        >
+          {this.renderTabs()}
+        </Tabs>
+        <Tabs
+          className='TabSmall'
+          defaultActiveKey='0'
+          tabPosition='top'
+          style={{ height: '100%' }}
+        >
+          {this.renderTabs()}
+        </Tabs>
       </div>
     )
   }

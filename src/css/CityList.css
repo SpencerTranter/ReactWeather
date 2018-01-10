@@ -1,0 +1,38 @@
+.CityList {
+  display: flex;
+  height: 60vh;
+}
+
+.TabSmall {
+  display: none;
+  flex-direction: column;
+}
+
+.ant-tabs {
+  width: 100%;
+}
+
+.ant-tabs-bar {
+  width: 10%;
+  min-width: 125px;
+}
+
+.ant-tabs-content {
+  align-items: center;
+}
+
+.ant-tabs-tabpane {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .TabLarge { display: none; }
+  .TabSmall { display: flex; }
+  .ant-tabs-bar { width: 100% }
+ }
+
+ @media (max-width: 500px) {
+   .CityList { height: 70vh; }
+  }
