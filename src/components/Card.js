@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Row, Col } from 'antd';
+
 import '../css/weather-icons.css';
 import '../css/Card.css';
 
@@ -10,15 +12,21 @@ class Card extends Component{
   render() {
     return (
       <div className="Card">
-        <div className="Day Column">
+        <Row className="Day">
+          <Col span={24}>
           <p> {this.props.day} </p>
-        </div>
-        <div className='Icon Column'>
+          </Col>
+        </Row>
+        <Row className='Weathercon'>
+          <Col span={24}>
           <i className={this.props.weather}></i>
-        </div>
-        <div className='Temp Column'>
+          </Col>
+        </Row>
+        <Row className='Temp'>
+          <Col span={24}>
           <p> {this.props.temp} </p>
-        </div>
+          </Col>
+        </Row>
       </div>
     )
   }

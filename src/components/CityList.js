@@ -7,7 +7,7 @@ class CityList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { cities: [] };
+    this.state = { cities: ['Vancouver'] };
 
     this.addCity     = this.addCity.bind(this);
     this.removeCity  = this.removeCity.bind(this);
@@ -40,9 +40,7 @@ class CityList extends Component {
         <CitySelect
         addCity={this.addCity}
         />
-        <div className='Cities container-fluid'>
-            {this.renderCities()}
-        </div>
+        {this.renderCities()}
       </div>
     )
   }

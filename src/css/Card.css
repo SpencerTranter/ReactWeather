@@ -1,24 +1,23 @@
 .Card {
   height: 120px;
   width: 80px;
-  margin: 0;
   padding: 0;
   border-radius: 5px;
-  border: 2px solid black;
+  border: 2px solid white;
   display: inline-block;
   margin-top: 5px;
   margin: 2px;
 }
 .Day {
-  height: 20%;
+  height: 20px;
 }
-.Icon {
-  height: 60%;
+.Weathercon {
+  height: 75px;
 }
 .Temp {
-  height: 20%;
+  height: 25px;
 }
-.Column {
+Row {
   width: 100%;
 }
 p {

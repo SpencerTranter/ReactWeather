@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import  { Icon, Card } from 'antd';
 
 import CityList from './components/CityList';
 import './css/App.css';

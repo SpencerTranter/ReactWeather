@@ -1,0 +1,13 @@
+.City {
+  color: white;
+  margin-top: 4vh;
+}
+.CityTitle {
+  color: white;
+}
+.CityInner {
+  border: 2px solid #5EADF5;
+  background-color: #5EADF5;
+  border-radius: 5px;
+  height: 59vh;
+}

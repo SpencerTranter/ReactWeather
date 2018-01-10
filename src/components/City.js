@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { Icon, Row, Col, Layout, Button } from 'antd';
 
 import '../css/City.css';
 
 import Weather from './Weather';
 
+const { Content } = Layout;
 
 class City extends Component {
 
@@ -19,15 +21,32 @@ class City extends Component {
 
   render() {
     return (
-      <div className='City container-fluid'>
-        <header className="City-header">
-          <div className='row'>
-            <h1 className='City-title col-md-4'>{this.props.name}</h1>
-            <button className='col-md-4' onClick={this.removeCity}>Remove Me!</button>
+      <Row justify='center' className='City'>
+        <Col  span={3} className='CityOutter'></Col>
+
+        <Col  span={18} className='CityInner'>
+          <div className='CityHeader'>
+            <Row justify='right'>
+              <Col  span={1}>
+                <Button type='normal' size='small' shape='circle'>
+                  <Icon type="close" onClick={this.removeCity}/>
+                </Button>
+              </Col>
+            </Row>
+            <Row justify='center'>
+              <Col span={24}>
+                <h1 className='CityTitle'>{this.props.name}</h1>
+              </Col>
+            </Row>
           </div>
-        </header>
-        <Weather city={this.props.name}/>
-      </div>
+
+          <Content >
+            <Weather city={this.props.name}/>
+          </Content>
+        </Col>
+
+        <Col  span={3} className='CityOutter'></Col>
+      </Row>
     );
   }
 

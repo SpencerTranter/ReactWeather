@@ -1,3 +1,9 @@
+.CitySelet {
+  height: 15vh;
+  padding-bottom: 2rem;
+}
+
+
 .search-input,
 .search-input:focus,
 .search-input:active {
@@ -29,6 +35,6 @@
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5rem;
+  padding-top: 2rem;
   width: 50%;
 }

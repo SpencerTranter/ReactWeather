@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios  from 'axios';
 
+import '../css/Weather.css';
+
 import config from '../data/config.json';
 import Card   from './Card';
 
@@ -70,9 +72,7 @@ class City extends Component {
     render() {
       return (
         <div className='Weather'>
-          <header className="Weather-header">
-            <h3 className="Weather-title">Forcast</h3>
-          </header>
+          <h3 className="WeatherTitle">Forcast</h3>
           {this.renderCards()}
         </div>
       );
