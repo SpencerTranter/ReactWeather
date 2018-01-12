@@ -15,11 +15,9 @@ export class CitySelect extends Component {
 
   addCity(address) {
     const city = address.split(',')[0];
-    if (city.length > 2) {
-      this.props.addCity(city);
-      this.setState({ address: '' });
-    }
-    else this.setState({ address: 'Please choose another city!' });
+    
+    this.props.addCity(city);
+    this.setState({ address: '' });
   }
 
   handleChange(address) {

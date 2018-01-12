@@ -6,17 +6,17 @@ import '../css/Weather.css';
 import config from '../data/config.json';
 import Card   from './Card';
 
-const getWeather = (name) => {
+const getWeather = (name) => new Promise((resolve, reject) => {
 
   return axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${name}&APPID=${config.weatherKey}&units=metric&cnt=7`)
     .then((res) => {
       let weather = res.data.list.map(data => data.weather[0].main);
       let temp = res.data.list.map(data => Math.round(data.main.temp));
-      return { weather, temp }
+      resolve({ weather, temp });
     })
-    .catch((error) => console.log(error));
+    .catch((err) => reject(err));
 
-}
+})
 
 const createDays = () => {
 
@@ -44,7 +44,10 @@ class City extends Component {
   componentDidMount() {
     getWeather(this.props.city)
     .then(obj => this.setState({ temp: obj.temp, weather: obj.weather, days: createDays() }))
-    .catch(err => alert('Error'));
+    .catch(err => {
+      alert('Please choose another city!')
+      this.removeCity();
+    });
   }
 
   renderCards() {

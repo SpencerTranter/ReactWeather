@@ -31,7 +31,7 @@ class City extends Component {
             <h1 className='CityTitle'>{this.props.name}</h1>
           </div>
         </div>
-        <Weather city={this.props.name}/>
+        <Weather removeCity={this.removeCity} city={this.props.name}/>
       </div>
     );
   }
