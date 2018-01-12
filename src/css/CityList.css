@@ -16,10 +16,6 @@
   height: 60vh;
 }
 
-.ant-tabs-vertical {
-  padding-right: 24px;
-}
-
 .ant-tabs-tabpane {
   display: flex;
   justify-content: center;
@@ -41,4 +37,7 @@
 
  @media (max-width: 900px) {
    .CityList { height: 70vh; }
+  }
+  @media (min-width: 901px) {
+    .ant-tabs-content { padding-right: 24px; }
   }
