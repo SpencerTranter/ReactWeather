@@ -13,12 +13,18 @@
 }
 .Weathercon {
   height: 75px;
+  align-items: center;
 }
 .Temp {
   height: 25px;
 }
-Row {
-  width: 100%;
+.Temp, .Day, .Weathercon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.Weathercon i {
+  font-size: 2em;
 }
 p {
   margin: 0;

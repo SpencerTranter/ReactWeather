@@ -1,23 +1,31 @@
 .City {
   color: white;
   width: 100%;
-  max-width: 950px;
+  max-width: 1150px;
+  border: 2px solid #5EADF5;
+  background-color: #5EADF5;
+  border-radius: 8px;
+  height: 95%;
+  width: 100%;
 }
+
 .CityTitle {
   color: white;
 }
-.CityInner {
-  border: 2px solid #5EADF5;
-  background-color: #5EADF5;
-  border-radius: 5px;
-  height: 60vh;
-  width: 100%;
-  margin-right: 10%;
 
+.HeaderButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
-.CityHeader {
+.HeaderTitle {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
+
+@media (max-width: 900px) {
+  .City { height: 98%; }
+ }

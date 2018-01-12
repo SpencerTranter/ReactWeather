@@ -12,21 +12,15 @@ class Card extends Component{
   render() {
     return (
       <div className="Card">
-        <Row className="Day">
-          <Col span={24}>
+        <div className="Day">
           <p> {this.props.day} </p>
-          </Col>
-        </Row>
-        <Row className='Weathercon'>
-          <Col span={24}>
+        </div>
+        <div className='Weathercon'>
           <i className={this.props.weather}></i>
-          </Col>
-        </Row>
-        <Row className='Temp'>
-          <Col span={24}>
+        </div>
+        <div className='Temp'>
           <p> {this.props.temp} </p>
-          </Col>
-        </Row>
+        </div>
       </div>
     )
   }

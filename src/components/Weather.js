@@ -72,8 +72,12 @@ class City extends Component {
     render() {
       return (
         <div className='Weather'>
-          <h3 className="WeatherTitle">Forcast</h3>
-          {this.renderCards()}
+          <div className='WeatherTitle'>
+            <h3>Forcast</h3>
+          </div>
+          <div className='WeatherCards'>
+            {this.renderCards()}
+          </div>
         </div>
       );
     }
