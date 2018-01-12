@@ -21,17 +21,17 @@ class City extends Component {
   render() {
     return (
       <div className='City'>
-        <div className='CityInner'>
-          <div className='CityHeader'>
-            <Button type='normal' size='small' shape='circle' onClick={this.removeCity}>
-              <Icon type="close" />
-            </Button>
+        <div className='HeaderButton'>
+          <Button type='normal' size='small' shape='circle' onClick={this.removeCity}>
+            <Icon type="close" />
+          </Button>
+        </div>
+        <div className='CityHeader'>
+          <div className='HeaderTitle'>
             <h1 className='CityTitle'>{this.props.name}</h1>
           </div>
-          <Content >
-            <Weather city={this.props.name}/>
-          </Content>
         </div>
+        <Weather city={this.props.name}/>
       </div>
     );
   }
