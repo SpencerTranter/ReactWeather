@@ -41,3 +41,28 @@
   @media (min-width: 901px) {
     .ant-tabs-content { padding-right: 24px; }
   }
+
+/* Mobile */
+@media only screen
+and (max-height: 750px)
+and (max-width: 450px) {
+
+  .CityList {
+    height: 85vh;
+   }
+  .ant-tabs-content {
+    height: 100%;
+
+  }
+}
+
+/* Landscape Mobile */
+  @media only screen
+  and (max-height: 450px)
+  and (max-width: 750px) {
+
+    .CityList {
+      height: 85vh;
+    }
+
+ }

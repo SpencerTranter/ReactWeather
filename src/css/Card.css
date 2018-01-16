@@ -1,5 +1,4 @@
 .Card {
-  width: 80px;
   padding: 0;
   border-radius: 5px;
   border: 2px solid white;
@@ -49,7 +48,9 @@ p {
   color: #d61111;
 }
 
-@media (max-width: 900px) {
+@media only screen
+and (min-height: 751px)
+and (max-width: 900px) {
   .Card{
     width: 48%;
     height: 26%;
@@ -63,9 +64,6 @@ p {
     margin: 0;
     font-size: 1em;
   }
-  .TempMain {
-    display: none;
-  }
   .Day{
     height: 40%;
   }
@@ -77,22 +75,50 @@ p {
   }
 }
 
+/* Media */
+@media only screen
+and (max-height: 750px)
+and (max-width: 450px) {
 
-@media (max-height: 550px) {
-  .TempRange { display: none; }
-  .Card { height: 100% }
-  .TempMain { height: 30% }
-  .Day{ height: 20%; }
-  .Weathercon { height: 50%; }
+  .Card {
+    height: 14%;
+    width: 100%;
+  }
+  .TempRange {
+    display: none;
+  }
+  .TempContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 60%;
+  }
+  p {
+    margin: 0;
+    font-size: 1.3em;
+  }
+  .Weathercon i {
+    font-size: 1.8em;
+  }
+
  }
 
- @media (max-height: 400px) {
+/* Landscape Media */
+ @media only screen
+ and (max-height: 450px)
+ and (max-width: 750px) {
+
    .Card {
-     margin-top: 0px;
-     height: 30%;
      width: 32%;
-  }
-  .Day{ height: 35%; }
-  .Weathercon { height: 50%; }
+     height: 33%;
+   }
+   .TempRange {
+     display: none;
+   }
+   .TempContent {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+   }
 
  }

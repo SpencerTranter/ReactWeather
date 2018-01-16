@@ -40,3 +40,9 @@
  @media (max-height: 550px) {
    .CityTitle { display: none; }
   }
+
+  @media only screen
+  and (max-height: 450px)
+  and (max-width: 750px) {
+    .CityHeader { height: 8vh }
+  }

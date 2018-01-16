@@ -45,7 +45,3 @@
 @media (max-width: 900px) {
   .form-group { padding-left: inherit; }
  }
-
- @media (max-height: 550px) {
-   .CitySelect {height: 15vh; }
-  }
