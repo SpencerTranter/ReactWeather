@@ -1,5 +1,4 @@
 .Card {
-  height: 120px;
   width: 80px;
   padding: 0;
   border-radius: 5px;
@@ -7,25 +6,93 @@
   display: inline-block;
   margin-top: 5px;
   margin: 2px;
+  height: 100%;
+  width: 100%;
 }
-.Day {
-  height: 20px;
-}
-.Weathercon {
-  height: 75px;
-  align-items: center;
-}
-.Temp {
-  height: 25px;
-}
+
 .Temp, .Day, .Weathercon {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 .Weathercon i {
-  font-size: 2em;
+  font-size: 2.5em;
 }
 p {
   margin: 0;
+  font-size: 1.5em;
 }
+.Day {
+  height: 10%;
+}
+.Weathercon {
+  height: 50%;
+  align-items: center;
+}
+.TempMain {
+  height: 25%;
+}
+.TempRange {
+  height: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex
+}
+.TempRange p {
+  font-size: 1.2em;
+}
+.TempLow {
+  color: #4683fc;
+}
+.TempHigh {
+  color: #d61111;
+}
+
+@media (max-width: 900px) {
+  .Card{
+    width: 48%;
+    height: 26%;
+    margin-top: 0px;
+    align-content: center;
+  }
+  .Weathercon i {
+    font-size: 1.5em;
+  }
+  p {
+    margin: 0;
+    font-size: 1em;
+  }
+  .TempMain {
+    display: none;
+  }
+  .Day{
+    height: 40%;
+  }
+  .Weathercon {
+    height: 30%;
+  }
+  .TempRange {
+    height: 10%;
+  }
+}
+
+
+@media (max-height: 550px) {
+  .TempRange { display: none; }
+  .Card { height: 100% }
+  .TempMain { height: 30% }
+  .Day{ height: 20%; }
+  .Weathercon { height: 50%; }
+ }
+
+ @media (max-height: 400px) {
+   .Card {
+     margin-top: 0px;
+     height: 30%;
+     width: 32%;
+  }
+  .Day{ height: 35%; }
+  .Weathercon { height: 50%; }
+
+ }

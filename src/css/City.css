@@ -2,15 +2,13 @@
   color: white;
   width: 100%;
   max-width: 1150px;
-  border: 2px solid #5EADF5;
-  background-color: #5EADF5;
   border-radius: 8px;
-  height: 95%;
+  height: 60vh;
   width: 100%;
 }
 
-.CityTitle {
-  color: white;
+.CityHeader {
+  height: 10vh;
 }
 
 .HeaderButton {
@@ -25,7 +23,20 @@
   justify-content: center;
 }
 
+.HeaderTitle h1{
+  color: white;
+}
+
 
 @media (max-width: 900px) {
-  .City { height: 98%; }
+  .City { height: 100%; }
  }
+
+ @media (max-width: 550px) {
+   .CityTitle { display: none; }
+   .CityHeader { height: 6vh }
+  }
+
+ @media (max-height: 550px) {
+   .CityTitle { display: none; }
+  }

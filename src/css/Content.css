@@ -1,3 +1,7 @@
 .Content {
   height: 75vh;
 }
+
+@media (max-width: 900px) {
+  .Content { height: 85vh; }
+ }

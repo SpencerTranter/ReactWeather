@@ -10,8 +10,9 @@ const getWeather = (name) => new Promise((resolve, reject) => {
 
   return axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${name}&APPID=${config.weatherKey}&units=metric&cnt=7`)
     .then((res) => {
+      console.log(res);
       let weather = res.data.list.map(data => data.weather[0].main);
-      let temp = res.data.list.map(data => Math.round(data.main.temp));
+      let temp = res.data.list.map(data => [Math.round(data.main.temp), Math.floor(data.main.temp_min), Math.ceil(data.main.temp_max)]);
       resolve({ weather, temp });
     })
     .catch((err) => reject(err));
@@ -75,9 +76,6 @@ class City extends Component {
     render() {
       return (
         <div className='Weather'>
-          <div className='WeatherTitle'>
-            <h3>Forcast</h3>
-          </div>
           <div className='WeatherCards'>
             {this.renderCards()}
           </div>

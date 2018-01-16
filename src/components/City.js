@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Icon, Row, Col, Layout, Button } from 'antd';
+import { Icon, Button } from 'antd';
 
 import '../css/City.css';
 import Weather from './Weather';
-
-const { Content } = Layout;
 
 class City extends Component {
 
@@ -21,12 +19,12 @@ class City extends Component {
   render() {
     return (
       <div className='City'>
-        <div className='HeaderButton'>
-          <Button type='normal' size='small' shape='circle' onClick={this.removeCity}>
-            <Icon type="close" />
-          </Button>
-        </div>
         <div className='CityHeader'>
+          <div className='HeaderButton'>
+            <Button type='normal' size='small' shape='circle' onClick={this.removeCity}>
+              <Icon type="close" />
+            </Button>
+          </div>
           <div className='HeaderTitle'>
             <h1 className='CityTitle'>{this.props.name}</h1>
           </div>
