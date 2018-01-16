@@ -43,5 +43,9 @@
 }
 
 @media (max-width: 900px) {
-  .form-group { padding-left: inherit; }
+
+  .form-group {
+    padding-left: inherit;
+  }
+
  }

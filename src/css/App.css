@@ -28,19 +28,22 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 } */
-
-@media (max-height: 512px) {
-  .App-logo { display: none }
-  .App-header { margin: auto }
- }
+@media (max-height: 550px) {
+  .App-header {
+     display: none;
+  }
+}
 
  @media (max-width: 900px) {
-   .App-title { padding-left: 0; }
-  }
-
-  @media (max-width: 900px) {
-    .App-header { height: 15vh; }
+   
+   .App-title {
+     padding-left: 0;
    }
+   .App-header {
+     height: 15vh;
+   }
+
+  }
 
  /* Mobile */
    @media only screen

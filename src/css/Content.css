@@ -2,26 +2,37 @@
   height: 75vh;
 }
 
+@media (max-height: 550px) {
+  .Content {
+     height: 100vh;
+  }
+}
 @media (max-width: 900px) {
+
   .Content {
     height: 85vh;
   }
+
  }
 
 /* Mobile */
 @media only screen
 and (max-height: 750px)
 and (max-width: 450px) {
+
   .Content{
      height: 100vh;
   }
+
 }
 
 /* Landscape Mobile */
  @media only screen
  and (max-height: 450px)
  and (max-width: 750px) {
+
    .Content{
       height: 100vh;
    }
+
 }

@@ -29,23 +29,42 @@
   flex-direction: column;
 }
 
-@media (max-width: 900px) {
-  .TabLarge { display: none; }
-  .TabSmall { display: flex; }
-  .ant-tabs-bar { width: 100% }
- }
+/* Padding when Tabs bar is vertical */
+@media (min-width: 901px) {
 
- @media (max-width: 900px) {
-   .CityList { height: 70vh; }
+  .ant-tabs-content {
+    padding-right: 24px;
   }
-  @media (min-width: 901px) {
-    .ant-tabs-content { padding-right: 24px; }
+
+}
+
+/* Tablet Width */
+@media only screen
+and (max-width: 900px) {
+  .CityList {
+    height: 85vh;
+   }
+}
+
+/* Change Tabs bar from vertical to Horizontal */
+@media (max-width: 900px) {
+
+  .TabLarge {
+    display: none;
   }
+  .TabSmall {
+    display: flex;
+  }
+  .ant-tabs-bar {
+    width: 100%
+  }
+
+ }
 
 /* Mobile */
 @media only screen
 and (max-height: 750px)
-and (max-width: 450px) {
+and (max-width: 500px) {
 
   .CityList {
     height: 85vh;
