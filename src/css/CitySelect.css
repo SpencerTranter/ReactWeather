@@ -1,6 +1,7 @@
 .CitySelet {
   height: 15vh;
   margin: auto;
+  z-index: 1;
 }
 
 
@@ -32,6 +33,7 @@
 }
 
 .form-group {
+  position: relative;
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
