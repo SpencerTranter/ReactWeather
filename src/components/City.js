@@ -20,14 +20,7 @@ class City extends Component {
     return (
       <div className='City'>
         <div className='CityHeader'>
-          <div className='HeaderButton'>
-            <Button type='normal' size='small' shape='circle' onClick={this.removeCity}>
-              <Icon type="close" />
-            </Button>
-          </div>
-          <div className='HeaderTitle'>
-            <h1 className='CityTitle'>{this.props.name}</h1>
-          </div>
+          <h1 className='CityTitle'>{this.props.name}</h1>
         </div>
         <Weather removeCity={this.removeCity} city={this.props.name}/>
       </div>

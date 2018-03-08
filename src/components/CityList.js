@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Tabs } from 'antd';
+import { Tabs, Button } from 'antd';
 
 import City from './City';
 
@@ -11,7 +11,7 @@ class CityList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { cities: [...props.cities] };
+    this.state = { cities: [...props.cities], newCity: this.props.newCity };
 
     this.removeCity  = this.removeCity.bind(this);
   }
@@ -23,6 +23,10 @@ class CityList extends Component {
 
   removeCity(removeName) {
     this.props.removeCity(removeName);
+  }
+
+  onEdit = (targetKey) => {
+    this.props.removeCity(this.state.cities[targetKey]);
   }
 
   renderTabs() {
@@ -41,15 +45,9 @@ class CityList extends Component {
     return (
       <div className='CityList'>
         <Tabs
-          className='TabLarge'
-          defaultActiveKey='0'
-          tabPosition='left'
-          style={{ height: '100%' }}
-        >
-          {this.renderTabs()}
-        </Tabs>
-        <Tabs
-          className='TabSmall'
+          type="editable-card"
+          onEdit={this.onEdit}
+          className='TabMain'
           defaultActiveKey='0'
           tabPosition='top'
           style={{ height: '100%' }}
