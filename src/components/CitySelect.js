@@ -31,7 +31,7 @@ class CitySelect extends Component {
       this.setState({ selectValue: address });
 
     }
-    else this.clearForm;
+    else this.clearForm();
 
   }
 
