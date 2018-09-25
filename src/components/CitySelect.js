@@ -1,57 +1,61 @@
-import React, { Component }     from 'react';
-import PlacesAutocomplete       from 'react-places-autocomplete';
+import React, { Component } from 'react';
+import VirtualizedSelect from 'react-virtualized-select';
 
+import '../css/react-select.css';
 import '../css/CitySelect.css';
 
-export class CitySelect extends Component {
+const DATA = require('../data/cities');
+
+class CitySelect extends Component {
 
   constructor(props) {
-    super(props)
-    this.state = { address: '' }
+    super(props);
+    this.state = { selectValue: '' }
 
     this.addCity      = this.addCity.bind(this);
-    this.handleChange = this.handleChange.bind(this)
+    this.clearForm    = this.clearForm.bind(this);
+
+  }
+
+  clearForm () {
+
+    this.setState({ selectValue: '' });
+
   }
 
   addCity(address) {
-    const city = address.split(',')[0];
-    
-    this.props.addCity(city);
-    this.setState({ address: '' });
+
+    if (address !== null) {
+
+      this.props.addCity(address);
+      this.setState({ selectValue: address });
+
+    }
+    else this.clearForm();
+
   }
 
-  handleChange(address) {
-    this.setState({
-      address
-    })
-  }
-
-  render() {
-    const inputProps = {
-      type: 'text',
-      value: this.state.address,
-      onChange: this.handleChange,
-      autoFocus: true,
-      placeholder: 'Search Places'
-    }
-
-    const cssClasses = {
-      root: 'form-group',
-      input: 'search-input',
-      autocompleteContainer: 'autocomplete-container',
-    }
-
-    return (
-      <div className='CitySelect'>
-        <PlacesAutocomplete
-          onSelect={this.addCity}
-          onEnterKeyDown={this.addCity}
-          inputProps={inputProps}
-          classNames={cssClasses}
-        />
+  render () {
+		var options = DATA.CITIES;
+		return (
+      <div className="SelectContainer">
+  		<VirtualizedSelect ref="citySelect"
+  			options={options}
+  			simpleValue
+  			clearable
+  			name="select-city"
+  			value={this.state.selectValue}
+  			onChange={this.addCity}
+        onFocus={this.clearForm}
+  			searchable
+  			labelKey="name"
+  			valueKey="name"
+        placeholder="Select A City!"
+  		/>
       </div>
-    )
-  }
+		);
+	}
+
 }
 
 export default CitySelect;

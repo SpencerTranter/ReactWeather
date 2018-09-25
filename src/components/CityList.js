@@ -11,18 +11,17 @@ class CityList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { cities: [...props.cities] };
 
+    this.state = { ...this.props };
     this.removeCity  = this.removeCity.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-      this.setState({ cities: [...nextProps.cities] });
+    this.setState({ cities: [...nextProps.cities] });
   }
 
-
-  removeCity(removeName) {
-    this.props.removeCity(removeName);
+  removeCity = (targetKey) => {
+    this.props.removeCity(this.state.cities[targetKey]);
   }
 
   renderTabs() {
@@ -30,7 +29,6 @@ class CityList extends Component {
       <TabPane tab={name} key={i}>
         <City
         name={name}
-        removeCity={this.removeCity}
         key={i}
         />
       </TabPane>
@@ -41,15 +39,9 @@ class CityList extends Component {
     return (
       <div className='CityList'>
         <Tabs
-          className='TabLarge'
-          defaultActiveKey='0'
-          tabPosition='left'
-          style={{ height: '100%' }}
-        >
-          {this.renderTabs()}
-        </Tabs>
-        <Tabs
-          className='TabSmall'
+          type="editable-card"
+          onEdit={this.removeCity}
+          className='TabMain'
           defaultActiveKey='0'
           tabPosition='top'
           style={{ height: '100%' }}

@@ -1,15 +1,20 @@
 .CityList {
   display: flex;
-  height: 59vh;
+  height: 65vh;
 
+}
+.TabsMain {
+  flex-direction: column;
 }
 .ant-tabs {
   width: 100%;
 }
 
 .ant-tabs-bar {
-  width: 10%;
+  width: 100%;
+  max-width: 1150px;
   min-width: 125px;
+  margin: auto;
 }
 
 .ant-tabs-content {
@@ -24,23 +29,19 @@
   height: 100%;
 }
 
+.ant-tabs-nav-scroll {
+  display: flex;
+  justify-content: left;
+}
 .ant-tabs-tab {
-  color: white;
+  color: red;
+  background-color: green;
 }
 
-.TabSmall {
+.anticon-plus {
   display: none;
-  flex-direction: column;
 }
 
-/* Padding when Tabs bar is vertical */
-@media (min-width: 901px) {
-
-  .ant-tabs-content {
-    padding-right: 24px;
-  }
-
-}
 
 /* Tablet Width */
 @media only screen
@@ -49,21 +50,6 @@ and (max-width: 900px) {
     height: 85vh;
    }
 }
-
-/* Change Tabs bar from vertical to Horizontal */
-@media (max-width: 900px) {
-
-  .TabLarge {
-    display: none;
-  }
-  .TabSmall {
-    display: flex;
-  }
-  .ant-tabs-bar {
-    width: 100%
-  }
-
- }
 
 /* Mobile */
 @media only screen

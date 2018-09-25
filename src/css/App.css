@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  height: 25vh;
+  height: 15vh;
   padding: 20px;
   color: white;
 }
@@ -17,7 +17,6 @@
 .App-title {
   font-size: 3em;
   color: white;
-  padding-left: 10%;
 }
 
 .App-intro {
@@ -33,17 +32,6 @@
      display: none;
   }
 }
-
- @media (max-width: 900px) {
-   
-   .App-title {
-     padding-left: 0;
-   }
-   .App-header {
-     height: 15vh;
-   }
-
-  }
 
  /* Mobile */
    @media only screen

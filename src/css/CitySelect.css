@@ -1,52 +1,37 @@
-.CitySelet {
+.SelectContainer {
   height: 15vh;
   margin: auto;
-}
-
-
-.search-input,
-.search-input:focus,
-.search-input:active {
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-  border: honeydew;
-  display: block;
   width: 100%;
-  padding: 16px;
-  font-size: 16px;
-  border-radius: 2px;
-  outline: none;
+  display: flex;
 }
 
-.autocomplete-container {
-  border-bottom: honeydew;
-  border-left: honeydew;
-  border-right: honeydew;
-  border-top: 1px solid #e6e6e6;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  border-radius: 0 0 2px 2px;
+.Select {
+  height: 7vh;
+  margin: auto;
+  width: 40%;
 }
 
-.suggestion-item {
-  padding: 4px;
+.Select-control {
+  height: 100%;
+  width: 100%
+}
+
+.Select-multi-value-wrapper {
+  font-size: 3vh;
   text-align: left;
+  display: flex;
 }
 
-.form-group {
-  position: relative;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 5vh;
-  padding-bottom: 3vh;
-  padding-left: 10%;
-  width: 70%;
-  max-width: 700px;
+.Select-placeholder, .Select-value{
+  padding-top: 1vh;
 }
 
-@media (max-width: 900px) {
-
-  .form-group {
-    padding-left: inherit;
-  }
-
- }
+.VirtualizedSelectFocusedOption {
+  background-color: rgba(0, 126, 255, 0.1);
+}
+.VirtualizedSelectDisabledOption {
+  opacity: 0.5;
+}
+.VirtualizedSelectSelectedOption {
+  font-weight: bold;
+}

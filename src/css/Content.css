@@ -1,5 +1,5 @@
 .Content {
-  height: 75vh;
+  height: 85vh;
 }
 
 @media (max-height: 550px) {
@@ -7,13 +7,6 @@
      height: 100vh;
   }
 }
-@media (max-width: 900px) {
-
-  .Content {
-    height: 85vh;
-  }
-
- }
 
 /* Mobile */
 @media only screen
