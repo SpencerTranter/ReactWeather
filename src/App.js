@@ -17,6 +17,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to Sity</h1>
         </header>
         <Content/>
+        
       </div>
     );
   }
